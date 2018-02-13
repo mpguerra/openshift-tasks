@@ -7,7 +7,12 @@ metadata:
     name: tasks-pipeline
   name: tasks-pipeline
 spec:
+  source:
+    type: "Git"
+    git:
+      uri: "https://github.com/mpguerra/openshift-tasks"
   strategy:
+    type: "JenkinsPipeline"
     jenkinsPipelineStrategy:
       jenkinsfile: |-
         node('maven') {
